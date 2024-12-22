@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FahmiAzis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0130ff;
+            color: white;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #0130ff;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f7b500;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 500px;
+            background: url(bg.jpeg) center center no-repeat;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-attachment: fixed;
+        }
+
+        #hero h1 {
+            font-size: 60px;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .bg-dark {
+            background-color: #0130ff;
+        }
+
+        .bg-secondary {
+            background-color: #0130ff;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        section p {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-row div {
+            margin-bottom: 20px;
+        }
+
+        /* Gallery and Projects */
+        .gallery-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item img, .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover, .project-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .project-card {
+            background: #0130ff;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Social Media Section */
+        #social-media a {
+            font-size: 35px;
+            margin: 0 15px;
+            color: rgb(255, 0, 0);
+            transition: color 0.3s;
+        }
+
+        #social-media a:hover {
+            color: #f7b500;
+        }
+
+        /* Contact Section */
+        #contact form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form input, #contact form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ff0000;
+            font-size: 18px;
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+        #contact form button {
+            padding: 15px;
+            width: 100%;
+            background: #f7b500;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        #contact form button:hover {
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#social-media">Social Media</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Fahmi Azis</h1>
+        <p>Seorang manusia biasa yang ingin menjadi luar biasa.</p>
+    </section>
+
+   <!-- About Me Section -->
+<section id="about" class="bg-dark">
+    <div class="container">
+        <h2>Tentang saya</h2>
+        <p>Saya <strong>Fahmi Azis</strong>,adalah mahasiswa aktif di universitas pamulang,saat ini sedang menempuh semester 5,dengan semangat belajar yang tinggi saya terus berupaya mengembangkan keterampilan akademik maupun praktis di bidang yang saya tekuni.</p>
+        
+        <!-- Data Diri -->
+        <div class="row data-diri mt-5">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5><i class="fas fa-user"></i> Full Name</h5>
+                    <p>Fahmi Azis</p>
+                </div>
+                <div class="info-box">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>Serang,indonesia</p>
+                </div>
+                <div class="info-box">
+                    <h5><i class="fas fa-birthday-cake"></i> Birthday</h5>
+                    <p>24 april 2004</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5><i class="fas fa-graduation-cap"></i> University</h5>
+                    <p>Universitas pamulang</p>
+                </div>
+                <div class="info-box">
+                    <h5><i class="fas fa-laptop-code"></i> Skills</h5>
+                    <p>Web Development</p>
+                </div>
+                <div class="info-box">
+                    <h5><i class="fas fa-envelope"></i> Email</h5>
+                    <p>ezboyyy3@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* About Me Section Styling */
+    #about {
+        padding: 60px 0;
+    }
+
+    #about h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #about p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+
+    /* Data Diri Styling */
+    .data-diri {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .info-box {
+        background: #0130ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-box h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .info-box p {
+        font-size: 16px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-box i {
+        margin-right: 10px;
+        color: #c00a0a;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-diri {
+            flex-direction: column;
+        }
+
+        .info-box {
+            margin: 0 auto 20px auto;
+        }
+    }
+</style>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-secondary">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item"><img src="z.jpeg" alt="Gallery Image"></div>
+            </div>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="projects" class="bg-dark text-white py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">My Projects</h2>
+        
+        <!-- Project Photos -->
+      
+        <div class="row">
+            <div class="col-md-4">
+                <div class="project-item">
+                    <a href="https://www.sololearn.com/certificates/CC-AZFJAMNS" target="_blank">
+                        <img src="CSS.jpeg" alt="Project 1" class="img-fluid project-image">
+                    </a>
+                    <p class="text-center mt-2">
+                        <a href="https://www.sololearn.com/certificates/CC-AZFJAMNS" target="_blank">CSS</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <a href="https://www.sololearn.com/certificates/CC-C5L6NIDS" target="_blank">
+                        <img src="HTML.jpeg" alt="Project 2" class="img-fluid project-image">
+                    </a>
+                    <p class="text-center mt-2">
+                        <a href="https://www.sololearn.com/certificates/CC-C5L6NIDS" target="_blank">HTML</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <a href="https://www.sololearn.com/certificates/CC-MOR0N1IU" target="_blank">
+                        <img src="JS.jpeg" alt="Project 3" class="img-fluid project-image">
+                    </a>
+                    <p class="text-center mt-2">
+                        <a href="https://www.sololearn.com/certificates/CC-MOR0N1IU" target="_blank">JavaScript Intermediate</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <a href="https://www.sololearn.com/certificates/CC-COSH8EEI" target="_blank">
+                        <img src="JS.jpeg" alt="Project 4" class="img-fluid project-image">
+                    </a>
+                    <p class="text-center mt-2">
+                        <a href="https://www.sololearn.com/certificates/CC-COSH8EEI" target="_blank">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project Links -->
+        <div class="mt-5">
+            <h4 class="text-center mb-3">Project Links</h4>
+            <ul class="list-unstyled text-center">
+                <li><a href="KALKULAKTOR.html" target="_blank" class="project-link">Calculactor</a></li>
+                <li><a href="Tampilan login.html" target="_blank" class="project-link">Halaman Login</a></li>
+                <li><a href="chart penjualan.html" target="_blank" class="project-link">Grafik Penjualan</a></li>
+                <li><a href="Game.html" target="_blank" class="project-link">Game Tetris</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Project Modal 1 -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal1Label">Project 1</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="CSS.jpeg" alt="Project 1 Full Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project Modal 2 -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal2Label">Project 2</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="HTML.jpeg" alt="Project 2 Full Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project Modal 3 -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal3Label">Project 3</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="JS.jpeg" alt="Project 3 Full Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project Modal 4 -->
+<div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal3Label">Project 4</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="JS.jpeg" alt="Project 4 Full Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CSS -->
+<style>
+    #projects h2 {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .project-item {
+        position: relative;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .project-item img {
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .project-item img:hover {
+        transform: scale(1.05);
+    }
+
+    .project-link {
+        font-size: 18px;
+        text-decoration: none;
+        color: #f7b500;
+        font-weight: bold;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+        color: #ffcc33;
+    }
+
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .btn-close-white {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <!-- Social Media Section -->
+    <section id="social-media" class="bg-dark">
+        <div class="container text-center">
+            <h2>Follow Me</h2>
+            <a href="https://www.facebook.com/profile.php?id=61562515036122" class="fab fa-facebook"></a>
+            <a href="https://www.instagram.com/fahziss" class="fab fa-instagram"></a>
+            <a href="ezboyyy3@gmail.com" class="fas fa-envelope"></a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
