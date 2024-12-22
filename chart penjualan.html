@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Penjualan 2024</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .chart-container {
+            width: 90%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 400px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chart-container">
+        <h2>Grafik Penjualan 2024</h2>
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <script>
+        const salesData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Penjualan 2024',
+                data: [120, 150, 180, 200, 170, 160, 210, 230, 250, 270, 300, 320],
+                backgroundColor: createGradient('salesChart'),
+                borderColor: '#007bff',
+                borderWidth: 2,
+                hoverBackgroundColor: '#0056b3',
+                hoverBorderColor: '#003d7a',
+                barThickness: 30,
+            }]
+        };
+
+        function createGradient(chartId) {
+            const ctx = document.getElementById(chartId).getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(0, 123, 255, 0.6)');
+            gradient.addColorStop(1, 'rgba(0, 123, 255, 0.1)');
+            return gradient;
+        }
+
+        const salesConfig = {
+            type: 'bar',
+            data: salesData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { size: 14, weight: 'bold' },
+                            color: '#333'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#fff',
+                        titleColor: '#333',
+                        bodyColor: '#666',
+                        borderColor: '#e2e2e2',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `Rp ${tooltipItem.raw.toLocaleString()}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Bulan',
+                            font: { size: 14, weight: 'bold' },
+                            color: '#333'
+                        },
+                        grid: { color: '#ddd', lineWidth: 1 },
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 12, 
+                            maxRotation: 45, 
+                            minRotation: 45
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penjualan',
+                            font: { size: 14, weight: 'bold' },
+                            color: '#333'
+                        },
+                        beginAtZero: true,
+                        grid: { color: '#ddd', lineWidth: 1 },
+                        ticks: {
+                            callback: function(value) {
+                                return `Rp ${value.toLocaleString()}`; 
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        };
+
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(salesCtx, salesConfig);
+    </script>
+
+</body>
+</html>
